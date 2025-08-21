@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Form</title>
+</head>
+<body>
+  <header>
+    <h1>Enhanced HTML5 Form Demo</h1>
+    <p>Semantic structure · Accessible form controls · Validation · Lists · Tables · Media</p>
+  </header>
+
+  <main>
+    <!-- Main content / form -->
+    <article>
+      <h2>Registration Form</h2>
+      <p>All fields marked with * are required.</p>
+
+      <form action="#" method="post" enctype="multipart/form-data">
+        <p>This form uses HTML5 validation (no JavaScript needed).</p>
+
+        <!-- Identification -->
+        <fieldset>
+          <legend>Identity</legend>
+          <label for="formId">Form ID</label>
+          <input id="formId" name="formId" type="text" value="ENH-2025-001" readonly />
+
+          <label for="fullName">Full name *</label>
+          <input id="fullName" name="fullName" type="text" placeholder="Jane Wanjiku" autocomplete="name" required />
+
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" placeholder="jane@example.com" autocomplete="email" required />
+
+          <label for="phone">Phone *</label>
+          <input id="phone" name="phone" type="tel" placeholder="0712345678" pattern="^0\d{9}$" title="Start with 0 and use 10 digits, e.g., 0712345678" autocomplete="tel" required />
+
+          <label for="website">Personal website</label>
+          <input id="website" name="website" type="url" placeholder="https://example.com" autocomplete="url" />
+
+          <label for="birth">Date of birth *</label>
+          <input id="birth" name="birth" type="date" required />
+        </fieldset>
+
+        <!-- Address -->
+        <fieldset>
+          <legend>Address</legend>
+          <label for="address1">Address line 1 *</label>
+          <input id="address1" name="address1" type="text" placeholder="123 Moi Ave" autocomplete="address-line1" required />
+
+          <label for="address2">Address line 2</label>
+          <input id="address2" name="address2" type="text" placeholder="Apartment, suite, etc." autocomplete="address-line2" />
+
+          <label for="city">City/Town *</label>
+          <input id="city" name="city" type="text" placeholder="Nairobi" autocomplete="address-level2" required />
+
+          <label for="postal">Postal code</label>
+          <input id="postal" name="postal" type="text" placeholder="00100" pattern="^\d{5}$" title="5 digits, e.g., 00100" autocomplete="postal-code" />
+
+          <label for="country">Country *</label>
+          <select id="country" name="country" autocomplete="country" required>
+            <option value="" selected disabled>Choose…</option>
+            <option>Kenya</option>
+            <option>Tanzania</option>
+            <option>Uganda</option>
+            <option>Rwanda</option>
+            <option>Burundi</option>
+            <option>South Sudan</option>
+          </select>
+        </fieldset>
+
+        <!-- Preferences -->
+        <fieldset>
+          <legend>Preferences</legend>
+          <label for="tickets">Number of tickets</label>
+          <input id="tickets" name="tickets" type="number" min="1" max="10" step="1" value="1" />
+
+          <p>Attendance type *</p>
+          <label><input type="radio" name="attendance" value="in-person" required /> In-person</label>
+          <label><input type="radio" name="attendance" value="virtual" /> Virtual</label>
+
+          <p>Interests</p>
+          <label><input type="checkbox" name="interests" value="web" /> Web</label>
+          <label><input type="checkbox" name="interests" value="mobile" /> Mobile</label>
+          <label><input type="checkbox" name="interests" value="data" /> Data</label>
+
+          <label for="tshirt">T‑shirt size</label>
+          <select id="tshirt" name="tshirt">
+            <option value="">Select size</option>
+            <option>XS</option>
+            <option>S</option>
+            <option>M</option>
+            <option>L</option>
+            <option>XL</option>
+          </select>
+
+          <label for="avatar">Upload profile photo</label>
+          <input id="avatar" name="avatar" type="file" accept="image/*" />
+
+          <label for="bio">Short bio</label>
+          <textarea id="bio" name="bio" rows="4" placeholder="Tell us a bit about yourself…"></textarea>
+        </fieldset>
+
+        <!-- Consent -->
+        <fieldset>
+          <legend>Consent</legend>
+          <label><input id="terms" name="terms" type="checkbox" required /> I agree to the terms and conditions *</label>
+        </fieldset>
+
+        <button type="submit">Submit</button>
+        <button type="reset">Reset</button>
+      </form>
+    </article>
+
+    <!-- Sidebar: Lists, Table, Media  -->
+    <aside>
+      <h2>Event Info</h2>
+
+      <section>
+        <h3>What to bring (unordered list)</h3>
+        <ul>
+          <li>Valid ID</li>
+          <li>Charged laptop & charger</li>
+          <li>Notebook & pen</li>
+          <li>Water bottle</li>
+        </ul>
+      </section>
+
+      <section>
+        <h3>Schedule (ordered list)</h3>
+        <ol>
+          <li>Registration & breakfast</li>
+          <li>Keynote</li>
+          <li>Workshops</li>
+          <li>Networking</li>
+        </ol>
+      </section>
+
+      <section>
+        <h3>Glossary (description list)</h3>
+        <dl>
+          <dt>HTML</dt>
+          <dd>HyperText Markup Language for structuring web content.</dd>
+          <dt>CSS</dt>
+          <dd>Cascading Style Sheets for presentation.</dd>
+        </dl>
+      </section>
+
+      <section>
+        <h3>Pricing Table</h3>
+        <table>
+          <caption>All prices in KES</caption>
+          <thead>
+            <tr>
+              <th scope="col">Plan</th>
+              <th scope="col">Features</th>
+              <th scope="col">Price</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Student</th>
+              <td>Access to talks, community</td>
+              <td>1,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Standard</th>
+              <td>Talks + workshops</td>
+              <td>3,500</td>
+            </tr>
+            <tr>
+              <th scope="row">VIP</th>
+              <td>All access + swag</td>
+              <td>8,000</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h3>Media</h3>
+        <figure>
+          <img src="https://picsum.photos/800/320?grayscale" alt="Abstract banner placeholder" width="800" height="320" />
+          <figcaption>Sample banner image used as media example.</figcaption>
+        </figure>
+        <video controls width="400">
+          <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enhanced Form</p>
+  </footer>
+</body>
+</html>
+
